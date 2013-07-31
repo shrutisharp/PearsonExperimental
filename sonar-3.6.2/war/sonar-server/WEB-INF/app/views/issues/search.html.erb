@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/html">
+<div id="issue-filter-sidebar" class="page-split-left">
+<%= render :partial => 'issues/sidebar' -%>
+</div>
+<div class="page-split-right">
+<div id="content">
+<div class="marginbottom10">
+<% if @filter.issues_result && @filter.issues_result.maxResultsReached() %>
+<p class="notes"><%= message('issue_filter.max_results_reached', :params => @filter.paging.total()) -%></p>
+<% end %>
+<%= render :partial => 'list' -%>
+</div>
+</div>
+</div>
+</div>

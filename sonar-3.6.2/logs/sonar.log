@@ -1,0 +1,2063 @@
+STATUS | wrapper  | 2013/07/29 10:46:09 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 10:46:09 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 10:46:10 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 10:46:10 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 10:46:10 | 
+INFO   | jvm 1    | 2013/07/29 10:46:10 | 2013-07-29 10:46:10.466:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 10:46:12 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:12 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 10:46:13 ERROR o.s.c.p.Database  Can not connect to database. Please check connectivity and settings (see the properties prefixed by 'sonar.jdbc.').
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Access denied for user 'sonar'@'localhost' (using password: YES))
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044) ~[commons-dbcp-1.4.jar:1.4]
+	at org.sonar.core.persistence.DefaultDatabase.checkConnection(DefaultDatabase.java:140) [sonar-core-3.6.2.jar:na]
+	at org.sonar.core.persistence.DefaultDatabase.start(DefaultDatabase.java:69) [sonar-core-3.6.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.invokeMethod(ReflectionLifecycleStrategy.java:110) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.start(ReflectionLifecycleStrategy.java:89) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1015) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1008) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:766) [picocontainer-2.14.3.jar:na]
+	at org.sonar.api.platform.ComponentContainer.startComponents(ComponentContainer.java:87) [sonar-plugin-api-3.6.2.jar:na]
+	at org.sonar.server.platform.Platform.startDatabaseConnectors(Platform.java:188) [classes/:na]
+	at org.sonar.server.platform.Platform.init(Platform.java:129) [classes/:na]
+	at org.sonar.server.platform.PlatformLifecycleListener.contextInitialized(PlatformLifecycleListener.java:33) [classes/:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.6.2.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:47) [sonar-application-3.6.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_45]
+Caused by: java.sql.SQLException: Access denied for user 'sonar'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1078) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:925) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1704) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1250) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2483) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2516) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2301) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.24.jar:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:317) ~[mysql-connector-java-5.1.24.jar:na]
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545) ~[commons-dbcp-1.4.jar:1.4]
+	... 40 common frames omitted
+2013.07.29 10:46:13 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 10:46:13 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 10:46:13 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 10:46:14 INFO  org.sonar.INFO  Install plugins done: 795 ms
+2013.07.29 10:46:14 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 10:46:15 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 10:46:15 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 10:46:20 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 10:46:20 | gem install jruby-openssl for full support.
+2013.07.29 10:46:27 INFO  jruby.rack  An exception happened during JRuby-Rack startup
+no connection available
+--- System
+jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+Time: Mon Jul 29 10:46:27 -0700 2013
+Server: jetty/7.6.11.v20130520
+jruby.home: file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home
+
+--- Context Init Parameters:
+jruby.compat.version = 1.8
+jruby.max.runtimes = 1
+jruby.min.runtimes = 1
+jruby.rack.logging = slf4j
+public.root = /
+rails.env = production
+
+--- Backtrace
+ActiveRecord::ConnectionNotEstablished: no connection available
+  set_native_database_types at arjdbc/jdbc/RubyJdbcConnection.java:517
+                 initialize at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61
+                 initialize at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31
+            jdbc_connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6
+                       send at org/jruby/RubyKernel.java:2109
+             new_connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223
+    checkout_new_connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245
+                   checkout at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188
+                       loop at org/jruby/RubyKernel.java:1439
+                   checkout at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184
+            mon_synchronize at file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191
+                   checkout at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183
+                 connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98
+        retrieve_connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326
+        retrieve_connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123
+                 connection at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115
+                 initialize at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440
+                         up at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401
+                    migrate at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383
+          upgrade_and_start at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:62
+            automatic_setup at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:74
+                     (root) at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:150
+                       load at org/jruby/RubyKernel.java:1087
+           load_environment at /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:23
+           load_environment at file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65
+                     (root) at <script>:1
+
+--- RubyGems
+Gem.dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems
+Gem.path:
+/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems
+Activated gems:
+  rake-0.9.2.2
+  activesupport-2.3.15
+  activerecord-2.3.15
+  rack-1.1.3
+  actionpack-2.3.15
+  actionmailer-2.3.15
+  activeresource-2.3.15
+  rails-2.3.15
+  color-tools-1.3.0
+  i18n-0.4.2
+  json-jruby-1.2.3-universal-java-1.6
+  activerecord-jdbc-adapter-1.1.3
+  fastercsv-1.4.0
+
+--- Bundler
+undefined method `bundle_path' for Bundler:Module
+
+--- JRuby-Rack Config
+compat_version = RUBY1_8
+default_logger = org.jruby.rack.logging.StandardOutLogger@272c6f83
+err = java.io.PrintStream@3d5141b
+filter_adds_html = true
+filter_verifies_resource = false
+ignore_environment = false
+initial_memory_buffer_size = 
+initial_runtimes = 1
+jms_connection_factory = 
+jms_jndi_properties = 
+logger = org.jruby.rack.logging.Slf4jLogger@6b527dc6
+logger_class_name = slf4j
+logger_name = jruby.rack
+maximum_memory_buffer_size = 
+maximum_runtimes = 1
+num_initializer_threads = 
+out = java.io.PrintStream@5f0f8407
+rackup = 
+rackup_path = 
+rewindable = true
+runtime_arguments = 
+runtime_timeout_seconds = 
+serial_initialization = false
+servlet_context = ServletContext@o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+
+2013.07.29 10:46:27 ERROR jruby.rack  unable to create shared application instance
+org.jruby.rack.RackInitializationException: no connection available
+	from arjdbc/jdbc/RubyJdbcConnection.java:517:in `set_native_database_types'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6:in `jdbc_connection'
+	from org/jruby/RubyKernel.java:2109:in `send'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+	from org/jruby/RubyKernel.java:1439:in `loop'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+	from file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191:in `mon_synchronize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401:in `up'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383:in `migrate'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:62:in `upgrade_and_start'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:74:in `automatic_setup'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:150:in `(root)'
+	from org/jruby/RubyKernel.java:1087:in `load'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:23:in `load_environment'
+	from file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.DefaultRackApplicationFactory$4.init(DefaultRackApplicationFactory.java:231) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.DefaultRackApplicationFactory.getApplication(DefaultRackApplicationFactory.java:58) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.SharedRackApplicationFactory.init(SharedRackApplicationFactory.java:33) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:48) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.6.2.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:47) [sonar-application-3.6.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_45]
+org.jruby.exceptions.RaiseException: (ConnectionNotEstablished) no connection available
+	at arjdbc.jdbc.RubyJdbcConnection.set_native_database_types(arjdbc/jdbc/RubyJdbcConnection.java:517) ~[na:na]
+	at JdbcConnection.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61) ~[na:na]
+	at JdbcAdapter.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31) ~[na:na]
+	at (Anonymous).jdbc_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6) ~[na:na]
+	at org.jruby.RubyKernel.send(org/jruby/RubyKernel.java:2109) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.new_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223) ~[na:na]
+	at ConnectionPool.checkout_new_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245) ~[na:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188) ~[na:na]
+	at org.jruby.RubyKernel.loop(org/jruby/RubyKernel.java:1439) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184) ~[na:na]
+	at MonitorMixin.mon_synchronize(file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191) ~[na:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183) ~[na:na]
+	at ConnectionPool.connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98) ~[na:na]
+	at ConnectionHandler.retrieve_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326) ~[na:na]
+	at (Anonymous).retrieve_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123) ~[na:na]
+	at (Anonymous).connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115) ~[na:na]
+	at Migrator.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440) ~[na:na]
+	at (Anonymous).up(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401) ~[na:na]
+	at (Anonymous).migrate(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383) ~[na:na]
+	at (Anonymous).upgrade_and_start(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:62) ~[na:na]
+	at (Anonymous).automatic_setup(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:74) ~[na:na]
+	at (Anonymous).(root)(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:150) ~[na:na]
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1087) ~[jruby-complete-1.6.8.jar:na]
+	at Rails2Environment.load_environment(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:23) ~[na:na]
+	at (Anonymous).load_environment(file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65) ~[na:na]
+	at (Anonymous).(root)(<script>:1) ~[na:na]
+2013.07.29 10:46:27 ERROR jruby.rack  Error: application initialization failed
+org.jruby.rack.RackInitializationException: no connection available
+	from arjdbc/jdbc/RubyJdbcConnection.java:517:in `set_native_database_types'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6:in `jdbc_connection'
+	from org/jruby/RubyKernel.java:2109:in `send'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+	from org/jruby/RubyKernel.java:1439:in `loop'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+	from file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191:in `mon_synchronize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440:in `initialize'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401:in `up'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383:in `migrate'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:62:in `upgrade_and_start'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:74:in `automatic_setup'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:150:in `(root)'
+	from org/jruby/RubyKernel.java:1087:in `load'
+	from /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:23:in `load_environment'
+	from file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.DefaultRackApplicationFactory$4.init(DefaultRackApplicationFactory.java:231) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.DefaultRackApplicationFactory.getApplication(DefaultRackApplicationFactory.java:58) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.SharedRackApplicationFactory.init(SharedRackApplicationFactory.java:33) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:48) ~[jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.6.2.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:47) [sonar-application-3.6.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_45]
+org.jruby.exceptions.RaiseException: (ConnectionNotEstablished) no connection available
+	at arjdbc.jdbc.RubyJdbcConnection.set_native_database_types(arjdbc/jdbc/RubyJdbcConnection.java:517) ~[na:na]
+	at JdbcConnection.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61) ~[na:na]
+	at JdbcAdapter.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31) ~[na:na]
+	at (Anonymous).jdbc_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6) ~[na:na]
+	at org.jruby.RubyKernel.send(org/jruby/RubyKernel.java:2109) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.new_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223) ~[na:na]
+	at ConnectionPool.checkout_new_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245) ~[na:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188) ~[na:na]
+	at org.jruby.RubyKernel.loop(org/jruby/RubyKernel.java:1439) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184) ~[na:na]
+	at MonitorMixin.mon_synchronize(file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191) ~[na:na]
+	at ConnectionPool.checkout(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183) ~[na:na]
+	at ConnectionPool.connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98) ~[na:na]
+	at ConnectionHandler.retrieve_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326) ~[na:na]
+	at (Anonymous).retrieve_connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123) ~[na:na]
+	at (Anonymous).connection(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115) ~[na:na]
+	at Migrator.initialize(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440) ~[na:na]
+	at (Anonymous).up(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401) ~[na:na]
+	at (Anonymous).migrate(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383) ~[na:na]
+	at (Anonymous).upgrade_and_start(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:62) ~[na:na]
+	at (Anonymous).automatic_setup(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/database_version.rb:74) ~[na:na]
+	at (Anonymous).(root)(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:150) ~[na:na]
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1087) ~[jruby-complete-1.6.8.jar:na]
+	at Rails2Environment.load_environment(/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/config/environment.rb:23) ~[na:na]
+	at (Anonymous).load_environment(file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65) ~[na:na]
+	at (Anonymous).(root)(<script>:1) ~[na:na]
+INFO   | jvm 1    | 2013/07/29 10:46:27 | 2013-07-29 10:46:27.405:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 10:46:27 | 2013-07-29 10:46:27.521:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:9000
+STATUS | wrapper  | 2013/07/29 13:24:07 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2013/07/29 13:24:08 | 2013-07-29 13:24:08.151:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@127.0.0.1:9000
+INFO   | jvm 1    | 2013/07/29 13:24:08 | 2013-07-29 13:24:08.153:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+2013.07.29 13:24:09 INFO  org.sonar.INFO  Stop sonar...
+2013.07.29 13:24:09 INFO  org.sonar.INFO  Stop sonar done: 2 ms
+INFO   | jvm 1    | 2013/07/29 13:24:09 | 2013-07-29 13:24:09.187:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+STATUS | wrapper  | 2013/07/29 13:24:09 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:24:09 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:24:09 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:24:10 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:24:10 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:24:10 | 
+INFO   | jvm 1    | 2013/07/29 13:24:10 | 2013-07-29 13:24:10.498:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:24:12 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:12 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:24:13 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:24:13 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:24:13 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:13 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:24:14 INFO  org.sonar.INFO  Install plugins done: 599 ms
+2013.07.29 13:24:14 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:24:14 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:24:14 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:24:19 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:24:19 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:24:26 | ==  InitialSchema: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:projects)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0530s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:snapshots)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0890s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:metrics)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:project_measures)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:rules_categories)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0910s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:rules)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:rule_failures)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:rules_parameters)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0750s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- create_table(:project_links)
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0790s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | ==  InitialSchema: migrated (0.7560s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:26 | 
+INFO   | jvm 1    | 2013/07/29 13:24:26 | ==  IndexDatabase: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- add_index(:rule_failures, :snapshot_id, {:name=>"rule_failure_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:26 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:26 | -- add_index(:rule_failures, :rule_id, {:name=>"rule_failure_rule_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.0950s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- add_index(:rules_parameters, :rule_id, {:name=>"rules_parameters_rule_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.1060s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- add_index(:snapshots, :project_id, {:name=>"snapshot_project_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.1000s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- add_index(:snapshots, :parent_snapshot_id, {:name=>"snapshots_parent"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- add_index(:snapshots, :root_snapshot_id, {:name=>"snapshots_root"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- add_index(:metrics, :name, {:unique=>true, :name=>"metrics_unique_name"})
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0.0840s
+INFO   | jvm 1    | 2013/07/29 13:24:27 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:27 | ==  IndexDatabase: migrated (0.6760s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:27 | 
+INFO   | jvm 1    | 2013/07/29 13:24:27 | ==  CreateUsers: migrating ====================================================
+INFO   | jvm 1    | 2013/07/29 13:24:27 | -- create_table("users")
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 1.0010s
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateUsers: migrated (1.0040s) ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | 
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateAdministrator: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateAdministrator: migrated (0.1030s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | 
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateRulesProfiles: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | -- create_table("rules_profiles")
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0.0480s
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:28 | -- create_table("active_rules")
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0.0980s
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:28 | -- create_table(:active_rule_parameters)
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0.0850s
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateRulesProfiles: migrated (0.2360s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | 
+INFO   | jvm 1    | 2013/07/29 13:24:28 | ==  CreateSnapshotSources: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:28 | -- create_table(:snapshot_sources)
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0.0790s
+INFO   | jvm 1    | 2013/07/29 13:24:28 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:28 | -- add_index(:snapshot_sources, :snapshot_id, {:name=>"snap_sources_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateSnapshotSources: migrated (0.1750s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | 
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateAsyncMeasureSnapshotsTable: migrating ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- create_table(:async_measure_snapshots)
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0750s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- add_index(:async_measure_snapshots, :snapshot_id, {:name=>"async_m_s_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.1130s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- add_index(:async_measure_snapshots, :project_measure_id, {:name=>"async_m_s_measure_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0750s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- add_index(:async_measure_snapshots, [:project_id, :metric_id], {:name=>"async_m_s_project_metric"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.2560s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateAsyncMeasureSnapshotsTable: migrated (0.5200s) ======================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | 
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateEventsTable: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- create_table(:events)
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.1310s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- add_index(:events, :resource_id, {:name=>"events_resource_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- add_index(:events, :snapshot_id, {:name=>"events_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0800s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateEventsTable: migrated (0.3090s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | 
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateAlertsTable: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- create_table(:alerts)
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:29 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateAlertsTable: migrated (0.0730s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | 
+INFO   | jvm 1    | 2013/07/29 13:24:29 | ==  CreateProperties: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:29 | -- create_table("properties")
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index(:properties, :prop_key, {:name=>"properties_key", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.1040s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateProperties: migrated (0.2000s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | 
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  AddMeasureData: migrating =================================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- create_table(:measure_data)
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.1070s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index(:measure_data, :measure_id, {:name=>"measure_data_measure_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.1210s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  AddMeasureData: migrated (0.2300s) ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | 
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  AddProjectKeeIndex: migrating =============================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index(:projects, :kee, {:name=>"projects_kee", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0830s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  AddProjectKeeIndex: migrated (0.0830s) ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | 
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateGroups: migrating ===================================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- create_table(:groups)
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0900s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateGroups: migrated (0.0900s) ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | 
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateGroupsUsers: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- create_table(:groups_users, {:id=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0910s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index("groups_users", "user_id", {:name=>"index_groups_users_on_user_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index("groups_users", "group_id", {:name=>"index_groups_users_on_group_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0780s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateGroupsUsers: migrated (0.2770s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | 
+INFO   | jvm 1    | 2013/07/29 13:24:30 | ==  CreateGroupRoles: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- create_table(:group_roles)
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:30 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:30 | -- add_index("group_roles", "group_id", {:name=>"group_roles_group"})
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.1080s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- add_index("group_roles", "resource_id", {:name=>"group_roles_resource"})
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.1170s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateGroupRoles: migrated (0.3200s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | 
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateUserRoles: migrating ================================================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- create_table(:user_roles)
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- add_index("user_roles", "user_id", {:name=>"user_roles_user"})
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.1110s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- add_index("user_roles", "resource_id", {:name=>"user_roles_resource"})
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.0860s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateUserRoles: migrated (0.2870s) =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | 
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateDefaultUsersAndGroups: migrating ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateDefaultUsersAndGroups: migrated (0.1820s) ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | 
+INFO   | jvm 1    | 2013/07/29 13:24:31 | ==  CreateDependenciesTable: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- create_table(:dependencies)
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.0410s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- execute("ALTER TABLE dependencies CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.1220s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- add_index(:dependencies, :from_snapshot_id, {:name=>"deps_from_sid"})
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:31 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:31 | -- add_index(:dependencies, :to_snapshot_id, {:name=>"deps_to_sid"})
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  CreateDependenciesTable: migrated (0.3650s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | 
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  IncreaseMeasureIdSize: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- execute("ALTER TABLE project_measures CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- change_column("measure_data", "measure_id", :big_integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- change_column("async_measure_snapshots", "project_measure_id", :big_integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.1090s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  IncreaseMeasureIdSize: migrated (0.3140s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | 
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  CreateExtensions: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("extensions")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0630s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("extension_files")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0870s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  CreateExtensions: migrated (0.1510s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | 
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  CreateFilters: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("filters")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("filter_columns")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0850s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("criteria")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- create_table("active_filters")
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  CreateFilters: migrated (0.3100s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | 
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  AddSnapshotsQualifierIndex: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- add_index(:snapshots, :qualifier, {:name=>"snapshots_qualifier"})
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0.0830s
+INFO   | jvm 1    | 2013/07/29 13:24:32 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  AddSnapshotsQualifierIndex: migrated (0.0840s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | 
+INFO   | jvm 1    | 2013/07/29 13:24:32 | ==  AddMeasuresSidMetricIndex: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:32 | -- add_index(:project_measures, [:snapshot_id, :metric_id], {:name=>"measures_sid_metric"})
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddMeasuresSidMetricIndex: migrated (0.0980s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddExtensionsCoreColumn: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- add_column(:extensions, :core, :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0990s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- remove_column(:extensions, :category)
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.1090s
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddExtensionsCoreColumn: migrated (0.2100s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  CreateQualityModels: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- create_table("quality_models")
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0860s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- create_table("characteristics")
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- create_table("characteristic_edges", {:id=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0820s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  CreateQualityModels: migrated (0.2710s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddCharacteristicIdToMeasures: migrating ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- add_column(:project_measures, :characteristic_id, :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddCharacteristicIdToMeasures: migrated (0.0980s) =========================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  CreatePlugins: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- create_table("plugins")
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.1190s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- create_table("plugin_files")
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.1230s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- drop_table(:extensions)
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- drop_table(:extension_files)
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0030s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  CreatePlugins: migrated (0.2510s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  DeleteCheckstyleTranslations: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  DeleteCheckstyleTranslations: migrated (0.0040s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddRulesEnabledColumn: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- add_column("rules", "enabled", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0.0890s
+INFO   | jvm 1    | 2013/07/29 13:24:33 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  AddRulesEnabledColumn: migrated (0.1050s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | 
+INFO   | jvm 1    | 2013/07/29 13:24:33 | ==  IncreaseViolationsSize: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:33 | -- change_column("rule_failures", "message", :string, {:limit=>4000, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.1030s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  IncreaseViolationsSize: migrated (0.1030s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddRulesCardinality: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("rules", "cardinality", :string, {:null=>true, :limit=>10})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.1040s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("rules", "parent_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.0910s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("rules_parameters", "default_value", :string, {:null=>true, :limit=>4000})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddRulesCardinality: migrated (0.2920s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddCharacteristicDescription: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("characteristics", "description", :string, {:null=>true, :limit=>4000})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddCharacteristicDescription: migrated (0.0940s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddCharacteristicEnabled: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("characteristics", "enabled", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddCharacteristicEnabled: migrated (0.0980s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  CreateCharacteristicProperties: migrating =================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- create_table("characteristic_properties")
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  CreateCharacteristicProperties: migrated (0.1050s) ========================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddRuleFailuresCost: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_column("rule_failures", "cost", :decimal, {:null=>true, :precision=>30, :scale=>20})
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.1040s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  AddRuleFailuresCost: migrated (0.1050s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  DeleteActiveRulesOrphans: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  DeleteActiveRulesOrphans: migrated (0.0020s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | 
+INFO   | jvm 1    | 2013/07/29 13:24:34 | ==  CreateDashboards: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- create_table(:active_dashboards)
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:34 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:34 | -- add_index(:active_dashboards, [:user_id], {:name=>"active_dashboards_userid"})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_index(:active_dashboards, [:dashboard_id], {:name=>"active_dashboards_dashboardid"})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- create_table(:dashboards)
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- create_table(:widgets)
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0890s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_index(:widgets, [:dashboard_id], {:name=>"widgets_dashboards"})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0860s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_index(:widgets, [:widget_key], {:name=>"widgets_widgetkey", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0710s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- create_table(:widget_properties)
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_index(:widget_properties, [:widget_id], {:name=>"widget_properties_widgets"})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.0950s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | ==  CreateDashboards: migrated (0.8020s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:35 | 
+INFO   | jvm 1    | 2013/07/29 13:24:35 | ==  AddRuleFailuresColumns: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_column("rule_failures", "created_at", :datetime, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.1100s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- add_column("rule_failures", "checksum", :string, {:null=>true, :limit=>1000})
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0.1160s
+INFO   | jvm 1    | 2013/07/29 13:24:35 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:35 | ==  AddRuleFailuresColumns: migrated (0.2270s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:35 | 
+INFO   | jvm 1    | 2013/07/29 13:24:35 | ==  DeleteIsoRuleCategories: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:35 | -- remove_column("rules", "rules_category_id")
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.0980s
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  DeleteIsoRuleCategories: migrated (0.0990s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | 
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  AddVariationColumns: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- alter measures table
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.0980s
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- add snapshots columns
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  AddVariationColumns: migrated (0.2000s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | 
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  SetNullableRuleConfigKey: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- add_column(:rules, :temp_plugin_config_key, :string, {:limit=>500, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- remove_column(:rules, :plugin_config_key)
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- rename_column(:rules, :temp_plugin_config_key, :plugin_config_key)
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.1230s
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  SetNullableRuleConfigKey: migrated (0.3280s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | 
+INFO   | jvm 1    | 2013/07/29 13:24:36 | ==  SetNullableRuleParameterDescription: migrating ============================
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- add_column(:rules_parameters, :temp_description, :string, {:limit=>4000, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0.1960s
+INFO   | jvm 1    | 2013/07/29 13:24:36 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:36 | -- remove_column(:rules_parameters, :description)
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.2480s
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- rename_column(:rules_parameters, :temp_description, :description)
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.1840s
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  SetNullableRuleParameterDescription: migrated (0.6330s) ===================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | 
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  AddIndexToMeasureDataSnapshot: migrating ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- add_index(:measure_data, :snapshot_id, {:name=>"m_data_sid"})
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.1170s
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  AddIndexToMeasureDataSnapshot: migrated (0.1180s) =========================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | 
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  AddPeriodsToFilters: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- add_column(:filters, :period_index, :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.1150s
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- add_column(:filter_columns, :variation, :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.1180s
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- add_column(:criteria, :variation, :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0.3530s
+INFO   | jvm 1    | 2013/07/29 13:24:37 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  AddPeriodsToFilters: migrated (0.5880s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | 
+INFO   | jvm 1    | 2013/07/29 13:24:37 | ==  AddColumnsForProfilesInheritance: migrating ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:37 | -- add_column("active_rules", "inheritance", :string, {:limit=>10, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1420s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- add_column("rules_profiles", "parent_name", :string, {:limit=>100, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1610s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  AddColumnsForProfilesInheritance: migrated (0.3050s) ======================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | 
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  DeleteUnvalidProjectSnapshots: migrating ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- Select project snapshots without measures...
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.0020s
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  DeleteUnvalidProjectSnapshots: migrated (0.0020s) =========================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | 
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  AddProfilesDisabled: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- add_column("rules_profiles", "enabled", :boolean, {:null=>false, :default=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  AddProfilesDisabled: migrated (0.1000s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | 
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  AddPermanentIdAndSwitchedOffToRuleFailures: migrating =====================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- add_column("rule_failures", "permanent_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1290s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- add_column("rule_failures", "switched_off", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1360s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- add_index("rule_failures", "permanent_id", {:name=>"rf_permanent_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  AddPermanentIdAndSwitchedOffToRuleFailures: migrated (0.3670s) ============
+INFO   | jvm 1    | 2013/07/29 13:24:38 | 
+INFO   | jvm 1    | 2013/07/29 13:24:38 | ==  CreateReview: migrating ===================================================
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- create_table("reviews")
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.1030s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- create_table("review_comments")
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:38 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:38 | -- execute("ALTER TABLE reviews CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- execute("ALTER TABLE review_comments CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0720s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  CreateReview: migrated (0.3680s) ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  AddIndexToCharacteristicProperty: migrating ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_index(:characteristic_properties, :characteristic_id, {:name=>"characteristic_properties_cid"})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0510s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  AddIndexToCharacteristicProperty: migrated (0.0520s) ======================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  ChangeFalsePositiveOnReviews: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_column("reviews", "resolution", :string, {:limit=>200, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- remove_column("reviews", "review_type")
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.1260s
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  ChangeFalsePositiveOnReviews: migrated (0.2340s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  CreateRuleChanges: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- create_table(:active_rule_changes)
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_index(:active_rule_changes, [:profile_id], {:name=>"active_rule_changes_pid"})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.1100s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- create_table(:active_rule_param_changes)
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_index(:active_rule_param_changes, [:active_rule_change_id], {:name=>"active_rule_param_changes_cid"})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0870s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_column("rules_profiles", "version", :integer, {:default=>1})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- add_column("rules_profiles", "used_profile", :boolean, {:default=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  CreateRuleChanges: migrated (0.5410s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  DropPluginTables: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- drop_table("plugins")
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0050s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- drop_table("plugin_files")
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0.0060s
+INFO   | jvm 1    | 2013/07/29 13:24:39 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  DropPluginTables: migrated (0.0120s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  DropParametersTable: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- drop_table("parameters")
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  DropParametersTable: migrated (0.0040s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | 
+INFO   | jvm 1    | 2013/07/29 13:24:39 | ==  CreateManualMeasures: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:39 | -- create_table("manual_measures")
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0670s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- execute("ALTER TABLE manual_measures CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.1080s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  CreateManualMeasures: migrated (0.1770s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  MoveAsyncMeasures: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- Move 0 measures
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  MoveAsyncMeasures: migrated (0.0040s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  DropAsyncMeasuresTable: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- remove_index("async_measure_snapshots", {:name=>"async_m_s_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0700s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- remove_index("async_measure_snapshots", {:name=>"async_m_s_measure_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.1000s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- remove_index("async_measure_snapshots", {:name=>"async_m_s_project_metric"})
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.1090s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- drop_table("async_measure_snapshots")
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0050s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  DropAsyncMeasuresTable: migrated (0.2880s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  AddIndexOnManualMeasures: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- add_index("manual_measures", "resource_id", {:name=>"manual_measures_resource_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  AddIndexOnManualMeasures: migrated (0.0880s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  CreateNotifications: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- create_table("notifications")
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  CreateNotifications: migrated (0.0940s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  SetNullableRuleName: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- add_column(:rules, :temp_name, :string, {:limit=>200, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0910s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- remove_column(:rules, :name)
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- rename_column(:rules, :temp_name, :name)
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0700s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  SetNullableRuleName: migrated (0.2660s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | 
+INFO   | jvm 1    | 2013/07/29 13:24:40 | ==  CreateDuplicationsIndex: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:40 | -- create_table(:duplications_index)
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0.0840s
+INFO   | jvm 1    | 2013/07/29 13:24:40 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- add_index(:duplications_index, :project_snapshot_id, {:name=>"duplications_index_psid"})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- add_index(:duplications_index, :snapshot_id, {:name=>"duplications_index_sid"})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.0850s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- add_index(:duplications_index, :hash, {:name=>"duplications_index_hash"})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  CreateDuplicationsIndex: migrated (0.3770s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  UpdateEventsTable: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- remove_column(:events, :data)
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1030s
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- change_column(:events, :name, :string, {:limit=>400, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1100s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- change_column(:events, :description, :string, {:limit=>4000, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  UpdateEventsTable: migrated (0.3070s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  AttachEventsToSnapshots: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  AttachEventsToSnapshots: migrated (0.0040s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  AddIndexOnDependenciesProjectSnapshot: migrating ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- add_index("dependencies", "project_snapshot_id", {:name=>"deps_prj_sid"})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.0790s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  AddIndexOnDependenciesProjectSnapshot: migrated (0.0790s) =================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  IncreaseQualifierSize: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- change_column("snapshots", "qualifier", :string, {:limit=>10, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- change_column("projects", "qualifier", :string, {:limit=>10, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0.1000s
+INFO   | jvm 1    | 2013/07/29 13:24:41 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  IncreaseQualifierSize: migrated (0.2060s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  RefactorRuleMeasures: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  RefactorRuleMeasures: migrated (0.0680s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | 
+INFO   | jvm 1    | 2013/07/29 13:24:41 | ==  AddRuleColumnsToReviews: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:41 | -- add_column("reviews", "rule_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0560s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- add_column("reviews", "manual_violation", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  AddRuleColumnsToReviews: migrated (0.1630s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  AddRuleFailuresCommitter: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- add_column("rule_failures", "committer", :string, {:null=>true, :limit=>100})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.1130s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  AddRuleFailuresCommitter: migrated (0.1140s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  AddManualSeverityToReviews: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- add_column("reviews", "manual_severity", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0820s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  AddManualSeverityToReviews: migrated (0.0820s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  CreateLoadedTemplates: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- create_table("loaded_templates")
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0830s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  CreateLoadedTemplates: migrated (0.0880s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  DeleteValueTypeFromWidgetProperties: migrating ============================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- remove_column("widget_properties", "value_type")
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  DeleteValueTypeFromWidgetProperties: migrated (0.0920s) ===================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  CreateTableResourceIndex: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- create_table("resource_index")
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- add_index("resource_index", "kee", {:name=>"resource_index_key", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- add_index("resource_index", "resource_id", {:name=>"resource_index_rid"})
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  CreateTableResourceIndex: migrated (0.2480s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | 
+INFO   | jvm 1    | 2013/07/29 13:24:42 | ==  CreateActionPlans: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- create_table("action_plans")
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- execute("ALTER TABLE action_plans CHANGE id id BIGINT AUTO_INCREMENT")
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0.1260s
+INFO   | jvm 1    | 2013/07/29 13:24:42 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:42 | -- create_table(:action_plans_reviews, {:id=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_index("action_plans", "project_id", {:name=>"I_ACTION_PLANS_PROJECT_ID"})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_index("action_plans_reviews", "action_plan_id", {:name=>"I_ACT_PLA_REV_ACT_PLA_ID"})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_index("action_plans_reviews", "review_id", {:name=>"I_ACT_PLA_REV_REV_ID"})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0820s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  CreateActionPlans: migrated (0.5360s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  DeleteDuplicationsId: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- remove_column("duplications_index", "id")
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.1220s
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  DeleteDuplicationsId: migrated (0.1220s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  DeleteResourceOrphans: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- Delete 0 resources
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0010s
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  DeleteResourceOrphans: migrated (0.0030s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddSnapshotsBuildDate: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_column("snapshots", "build_date", :datetime, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0820s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddSnapshotsBuildDate: migrated (0.0830s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddSnapshotsPurgeStatus: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_column("snapshots", "purge_status", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddSnapshotsPurgeStatus: migrated (0.1020s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddRuleAndActiveRuleNotes: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- create_table(:active_rule_notes)
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_index(:active_rule_notes, :active_rule_id, {:name=>"arn_active_rule_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- create_table(:rule_notes)
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.0740s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_index(:rule_notes, :rule_id, {:name=>"rule_notes_rule_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:43 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddRuleAndActiveRuleNotes: migrated (0.3680s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | 
+INFO   | jvm 1    | 2013/07/29 13:24:43 | ==  AddMetricsDeleteHistoricalData: migrating =================================
+INFO   | jvm 1    | 2013/07/29 13:24:43 | -- add_column("metrics", "delete_historical_data", :boolean, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0780s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddMetricsDeleteHistoricalData: migrated (0.0780s) ========================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  RenameDbcleanerProperties: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  RenameDbcleanerProperties: migrated (0.0090s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddMeasuresPerson: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- add_column("project_measures", "person_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0870s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddMeasuresPerson: migrated (0.0880s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddActiveFieldOnUsers: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- add_column("users", "active", :boolean, {:null=>true, :default=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0950s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddActiveFieldOnUsers: migrated (0.1300s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddIndexOnReviewResourceId: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- add_index("reviews", "resource_id", {:name=>"reviews_resource_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0760s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddIndexOnReviewResourceId: migrated (0.0770s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  RenameActionPlansDeadline: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- rename_column(:action_plans, :dead_line, :deadline)
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0890s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  RenameActionPlansDeadline: migrated (0.0890s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CleanReviewsWithDeletedUsersOrResources: migrating ========================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CleanReviewsWithDeletedUsersOrResources: migrated (0.0100s) ===============
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddProjectsPersonId: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- add_column("projects", "person_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0850s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  AddProjectsPersonId: migrated (0.0860s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CreateAuthors: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CreateAuthors: migrated (0.0000s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  ReplaceRuleFailuresCommitterByPerson: migrating ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- remove_column("rule_failures", "committer")
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- add_column("rule_failures", "person_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  ReplaceRuleFailuresCommitterByPerson: migrated (0.1940s) ==================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  DropTableRulesCategories: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- drop_table("rules_categories")
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  DropTableRulesCategories: migrated (0.0040s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CleanReviewsWithNullBooleans: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  CleanReviewsWithNullBooleans: migrated (0.0040s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | 
+INFO   | jvm 1    | 2013/07/29 13:24:44 | ==  UpdateReviewsBooleanColumns: migrating ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- change_column("reviews", "manual_severity", :boolean, {:null=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0.0880s
+INFO   | jvm 1    | 2013/07/29 13:24:44 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:44 | -- change_column("reviews", "manual_violation", :boolean, {:null=>false})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.1070s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  UpdateReviewsBooleanColumns: migrated (0.1960s) ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddAuthorsPrimaryKey: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- drop_table("authors")
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- create_table("authors")
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddAuthorsPrimaryKey: migrated (0.0810s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddDefaultDescriptionToManualRules: migrating =============================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddDefaultDescriptionToManualRules: migrated (0.0020s) ====================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddResourceIndexPrimaryKey: migrating =====================================
+2013.07.29 13:24:45 WARN  rails  Index name 'resource_index_key' on table 'resource_index' already exists. Skipping.
+2013.07.29 13:24:45 WARN  rails  Index name 'resource_index_rid' on table 'resource_index' already exists. Skipping.
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddResourceIndexPrimaryKey: migrated (0.0080s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddIndicesToResourceIndex: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_index("resource_index", "kee", {:name=>"resource_index_key", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_index("resource_index", "resource_id", {:name=>"resource_index_rid"})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0030s
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddIndicesToResourceIndex: migrated (0.0090s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IndexProjects: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- Index 0 projects
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IndexProjects: migrated (0.0030s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddGlobalToDashboards: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_column("dashboards", "is_global", :boolean)
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddGlobalToDashboards: migrated (0.1050s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddResourceIdToWidgets: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_column("widgets", "resource_id", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0900s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddResourceIdToWidgets: migrated (0.0900s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  CreateGlobalDashboardsForFilter: migrating ================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- drop_table("active_filters")
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  CreateGlobalDashboardsForFilter: migrated (0.0110s) =======================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddReviewData: migrating ==================================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_column("reviews", "data", :string, {:null=>true, :limit=>4000})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddReviewData: migrated (0.0950s) =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddKeyToFilters: migrating ================================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_column("filters", "kee", :string, {:null=>true, :limit=>100})
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddKeyToFilters: migrated (0.0140s) =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IgnoreLoadedFilters: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IgnoreLoadedFilters: migrated (0.0090s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IgnoreLoadedDashboards: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  IgnoreLoadedDashboards: migrated (0.0060s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  MoveDefaultRoles: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  MoveDefaultRoles: migrated (0.1140s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddIndexOnResourceRootId: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_index("projects", "root_id", {:name=>"projects_root_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0500s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddIndexOnResourceRootId: migrated (0.0510s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddCreatedAtOnProjects: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- add_column("projects", "created_at", :datetime, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0960s
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  AddCreatedAtOnProjects: migrated (0.0970s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  RemoveProjectsProfileId: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- Process 0 projects...
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- remove_column("projects", "profile_id")
+INFO   | jvm 1    | 2013/07/29 13:24:45 |    -> 0.0830s
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  RemoveProjectsProfileId: migrated (0.0950s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | 
+INFO   | jvm 1    | 2013/07/29 13:24:45 | ==  RemoveProfilesEnabledColumn: migrating ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:45 | -- remove_column("rules_profiles", "enabled")
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0960s
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RemoveProfilesEnabledColumn: migrated (0.1100s) ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  UpdateLanguageKeyMaxSize: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- change_column(:projects, :language, :string, {:null=>true, :limit=>20})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.1070s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- change_column(:rules_profiles, :language, :string, {:null=>true, :limit=>20})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  UpdateLanguageKeyMaxSize: migrated (0.2060s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RemoveProfilesDefaultColumn: migrating ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- remove_column("rules_profiles", "default_profile")
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0820s
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RemoveProfilesDefaultColumn: migrated (0.0870s) ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RemoveProfilesProvidedColumn: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- remove_column("rules_profiles", "provided")
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0900s
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RemoveProfilesProvidedColumn: migrated (0.0910s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  CreateSemaphores: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- create_table(:semaphores)
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- add_index(:semaphores, :checksum, {:unique=>true, :name=>"uniq_semaphore_checksums"})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- add_index(:semaphores, :name, {:name=>"semaphore_names", :length=>255})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  CreateSemaphores: migrated (0.2650s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  AddUniqueIndexToAuthors: migrating ========================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- Delete duplicated authors
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0030s
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- add_index(:authors, :login, {:unique=>true, :name=>"uniq_author_logins"})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0990s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  AddUniqueIndexToAuthors: migrated (0.1040s) ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RenameJavaCoverageProperty: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  RenameJavaCoverageProperty: migrated (0.0030s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  IncreaseGroupNameSize: migrating ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- change_column(:groups, :name, :string, {:limit=>500, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 0.0970s
+INFO   | jvm 1    | 2013/07/29 13:24:46 |    -> 2 rows
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  IncreaseGroupNameSize: migrated (0.0970s) =================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | 
+INFO   | jvm 1    | 2013/07/29 13:24:46 | ==  IncreaseSnapshotsPathSize: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:46 | -- change_column(:snapshots, :path, :string, {:limit=>500, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  IncreaseSnapshotsPathSize: migrated (0.1050s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  IncreaseSnapshotsVersionSize: migrating ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- change_column(:snapshots, :version, :string, {:limit=>500, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.1170s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  IncreaseSnapshotsVersionSize: migrated (0.1190s) ==========================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateMeasureFilters: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- create_table("measure_filters")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_index("measure_filters", "name", {:name=>"measure_filters_name"})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateMeasureFilters: migrated (0.1940s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateMeasureFilterFavourites: migrating ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- create_table("measure_filter_favourites")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0810s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_index("measure_filter_favourites", "user_id", {:name=>"measure_filter_favs_userid"})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateMeasureFilterFavourites: migrated (0.1850s) =========================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  AddPeriodToAlerts: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_column("alerts", "period", :integer, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0830s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  AddPeriodToAlerts: migrated (0.0840s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  MoveExistingMeasureFilters: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- Move 0 measure filters
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  MoveExistingMeasureFilters: migrated (0.0020s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  MoveFilterWidgets: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- Update 0 widgets
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  MoveFilterWidgets: migrated (0.0020s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  DropFilterTables: migrating ===============================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- drop_table("filter_columns")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- drop_table("criteria")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- drop_table("filters")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0030s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  DropFilterTables: migrated (0.0120s) ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  IgnoreHomeDashboardOnUpgrades: migrating ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  IgnoreHomeDashboardOnUpgrades: migrated (0.0080s) =========================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateGraphs: migrating ===================================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- create_table("graphs")
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0730s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_index("graphs", ["snapshot_id", "perspective"], {:name=>"graphs_perspectives", :unique=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  CreateGraphs: migrated (0.1770s) ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  PurgeViolations: migrating ================================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- Purge 0 violations
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0000s
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  PurgeViolations: migrated (0.0020s) =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | 
+INFO   | jvm 1    | 2013/07/29 13:24:47 | ==  AddStatusLanguageAndDatesToRules: migrating ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_column("rules", "status", :string, {:null=>true, :limit=>40})
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:47 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:47 | -- add_column("rules", "language", :string, {:null=>true, :limit=>20})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.1020s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_column("rules", "created_at", :datetime, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.1010s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_column("rules", "updated_at", :datetime, {:null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.0840s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddStatusLanguageAndDatesToRules: migrated (0.3650s) ======================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateRulesStatus: migrating ==============================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateRulesStatus: migrated (0.0060s) =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  RemoveEnabledFromRules: migrating =========================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- remove_column("rules", "enabled")
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.0870s
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  RemoveEnabledFromRules: migrated (0.0870s) ================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateMetricsUserManagedCreatedByWs: migrating ============================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateMetricsUserManagedCreatedByWs: migrated (0.0080s) ===================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  CreateSnapshotData: migrating =============================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- create_table(:snapshot_data)
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.1200s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_index(:snapshot_data, :snapshot_id, {:name=>"snapshot_data_snapshot_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.1150s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  CreateSnapshotData: migrated (0.2360s) ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddProfileAdministratorRole: migrating ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddProfileAdministratorRole: migrated (0.0320s) ===========================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddIdToDuplicationsIndex: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_column(:duplications_index, :id, :primary_key)
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.0670s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddIdToDuplicationsIndex: migrated (0.0670s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateActiveRuleChangesUserNameToNullable: migrating ======================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_column("active_rule_changes", "username", :string, {:limit=>200, :null=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- remove_column("active_rule_changes", "user_name")
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.1080s
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  UpdateActiveRuleChangesUserNameToNullable: migrated (0.2070s) =============
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddKeyToActionPlan: migrating =============================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_column("action_plans", "kee", :string, {:null=>true, :limit=>100})
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0.0850s
+INFO   | jvm 1    | 2013/07/29 13:24:48 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddKeyToActionPlan: migrated (0.0880s) ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | 
+INFO   | jvm 1    | 2013/07/29 13:24:48 | ==  AddIndexToUsersLogin: migrating ===========================================
+INFO   | jvm 1    | 2013/07/29 13:24:48 | -- add_index(:users, :login, {:name=>"users_login", :unique=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.0930s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | ==  AddIndexToUsersLogin: migrated (0.0940s) ==================================
+INFO   | jvm 1    | 2013/07/29 13:24:49 | 
+INFO   | jvm 1    | 2013/07/29 13:24:49 | ==  CreateIssues: migrating ===================================================
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- create_table(:issues)
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.0920s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :kee, {:name=>"issues_kee", :unique=>true})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.1030s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :component_id, {:name=>"issues_component_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.0950s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :root_component_id, {:name=>"issues_root_component_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.1180s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :rule_id, {:name=>"issues_rule_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.1030s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :severity, {:name=>"issues_severity"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :status, {:name=>"issues_status"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.0990s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :resolution, {:name=>"issues_resolution"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.0910s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :assignee, {:name=>"issues_assignee"})
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0.1050s
+INFO   | jvm 1    | 2013/07/29 13:24:49 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:49 | -- add_index(:issues, :action_plan_key, {:name=>"issues_action_plan_key"})
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.1080s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- add_index(:issues, :issue_creation_date, {:name=>"issues_creation_date"})
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.1150s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  CreateIssues: migrated (1.1410s) ==========================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  CreateIssueChanges: migrating =============================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- create_table(:issue_changes)
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.1000s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- add_index(:issue_changes, :kee, {:name=>"issue_changes_kee"})
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0950s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- add_index(:issue_changes, :issue_key, {:name=>"issue_changes_issue_key"})
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0770s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  CreateIssueChanges: migrated (0.2740s) ====================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  DeleteReviewDuplications: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- Remove 0 duplicated reviews
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0010s
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  DeleteReviewDuplications: migrated (0.0120s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  MigrateViolationsToIssues: migrating ======================================
+2013.07.29 13:24:50 INFO  o.s.s.d.m.ConvertViolationsToIssues$ViolationIdHandler  0 violations migrated to issues
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- drop_table("rule_failures")
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- drop_table("reviews")
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- drop_table("review_comments")
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- drop_table("action_plans_reviews")
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0040s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  MigrateViolationsToIssues: migrated (0.1440s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  DeleteReviewWidgets: migrating ============================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  DeleteReviewWidgets: migrated (0.0130s) ===================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  ReplaceReviewNotifications: migrating =====================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  ReplaceReviewNotifications: migrated (0.0130s) ============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  AddIndexToSnapshotsRootProjectId: migrating ===============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- add_index(:snapshots, :root_project_id, {:name=>"snapshots_root_project_id"})
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0480s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  AddIndexToSnapshotsRootProjectId: migrated (0.0490s) ======================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  AddIndexToGroupRolesRole: migrating =======================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | -- add_index(:group_roles, :role, {:name=>"group_roles_role"})
+2013.07.29 13:24:50 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:24:50 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0.0940s
+INFO   | jvm 1    | 2013/07/29 13:24:50 |    -> 0 rows
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  AddIndexToGroupRolesRole: migrated (0.0940s) ==============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  UpdateIssuesActionPlanKey: migrating ======================================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | ==  UpdateIssuesActionPlanKey: migrated (0.0030s) =============================
+INFO   | jvm 1    | 2013/07/29 13:24:50 | 
+2013.07.29 13:24:52 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Deploy GWT plugins done: 44 ms
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:24:52 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Load metrics done: 305 ms
+2013.07.29 13:24:52 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:24:53 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 749 ms
+2013.07.29 13:24:53 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:24:54 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 649 ms
+2013.07.29 13:24:54 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [pmd/java] done: 884 ms
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 41 ms
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [squid/java] done: 231 ms
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:24:55 INFO  org.sonar.INFO  Register rules [common-java/java] done: 6 ms
+2013.07.29 13:24:55 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:24:57 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way with Findbugs
+2013.07.29 13:24:57 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way
+2013.07.29 13:24:57 INFO  o.s.s.s.RegisterNewProfiles  Set default java profile: Sonar way
+2013.07.29 13:24:57 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2565 ms
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: Projects
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: My favourites
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 24 ms
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Dashboard
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Home
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Hotspots
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Issues
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: TimeMachine
+2013.07.29 13:24:58 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 115 ms
+2013.07.29 13:24:58 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:24:58 INFO  org.sonar.INFO  Start components done: 7579 ms
+INFO   | jvm 1    | 2013/07/29 13:24:58 | 2013-07-29 13:24:58.449:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:24:58 | 2013-07-29 13:24:58.500:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:9000
+STATUS | wrapper  | 2013/07/29 13:33:04 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2013/07/29 13:33:04 | 2013-07-29 13:33:04.778:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@127.0.0.1:9000
+INFO   | jvm 1    | 2013/07/29 13:33:04 | 2013-07-29 13:33:04.780:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+2013.07.29 13:33:05 INFO  org.sonar.INFO  Stop sonar...
+2013.07.29 13:33:05 INFO  o.s.s.n.NotificationService  Notification service stopped
+2013.07.29 13:33:05 INFO  org.sonar.INFO  Stop sonar done: 3 ms
+INFO   | jvm 1    | 2013/07/29 13:33:05 | 2013-07-29 13:33:05.818:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+STATUS | wrapper  | 2013/07/29 13:33:05 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:33:06 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:33:06 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:33:06 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:33:06 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:33:06 | 
+INFO   | jvm 1    | 2013/07/29 13:33:06 | 2013-07-29 13:33:06.718:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:33:08 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:08 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:33:09 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:33:09 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:33:09 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:33:09 INFO  org.sonar.INFO  Install plugins done: 319 ms
+2013.07.29 13:33:10 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:33:10 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:33:10 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2013.07.29 13:33:11 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:33:11 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:33:11 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:33:11 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:33:11 INFO  org.sonar.INFO  Deploy GWT plugins done: 48 ms
+2013.07.29 13:33:11 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:33:12 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:33:12 INFO  org.sonar.INFO  Load metrics done: 252 ms
+2013.07.29 13:33:12 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:33:12 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 475 ms
+2013.07.29 13:33:12 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 363 ms
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [pmd/java] done: 535 ms
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 27 ms
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [squid/java] done: 150 ms
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:33:13 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2013.07.29 13:33:14 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1945 ms
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 5 ms
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:33:16 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 14 ms
+2013.07.29 13:33:16 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:33:16 INFO  org.sonar.INFO  Start components done: 6369 ms
+2013.07.29 13:33:16 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:33:16 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:33:21 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:33:21 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:33:26 | 2013-07-29 13:33:26.764:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:33:26 | 2013-07-29 13:33:26.828:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:9000
+STATUS | wrapper  | 2013/07/29 13:40:33 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2013/07/29 13:40:34 | 2013-07-29 13:40:34.527:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@127.0.0.1:9000
+INFO   | jvm 1    | 2013/07/29 13:40:34 | 2013-07-29 13:40:34.528:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+2013.07.29 13:40:35 INFO  org.sonar.INFO  Stop sonar...
+2013.07.29 13:40:35 INFO  o.s.s.n.NotificationService  Notification service stopped
+2013.07.29 13:40:35 INFO  org.sonar.INFO  Stop sonar done: 2 ms
+INFO   | jvm 1    | 2013/07/29 13:40:35 | 2013-07-29 13:40:35.559:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+STATUS | wrapper  | 2013/07/29 13:40:35 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:40:35 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:40:36 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:40:36 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:40:36 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:40:36 | 
+INFO   | jvm 1    | 2013/07/29 13:40:36 | 2013-07-29 13:40:36.476:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:40:38 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:38 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:40:39 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:40:39 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:40:39 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:40:39 INFO  org.sonar.INFO  Install plugins done: 288 ms
+2013.07.29 13:40:39 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:40:40 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:40:40 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2013.07.29 13:40:41 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Deploy GWT plugins done: 49 ms
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:40:41 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:40:41 INFO  org.sonar.INFO  Load metrics done: 300 ms
+2013.07.29 13:40:42 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:40:42 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 510 ms
+2013.07.29 13:40:42 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 359 ms
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [pmd/java] done: 549 ms
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 32 ms
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [squid/java] done: 161 ms
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:40:43 INFO  org.sonar.INFO  Register rules [common-java/java] done: 5 ms
+2013.07.29 13:40:44 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1850 ms
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 5 ms
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:40:46 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2013.07.29 13:40:46 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:40:46 INFO  org.sonar.INFO  Start components done: 6264 ms
+2013.07.29 13:40:46 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:40:46 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:40:50 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:40:50 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:40:57 | 2013-07-29 13:40:56.905:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:40:57 | 2013-07-29 13:40:56.959:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
+STATUS | wrapper  | 2013/07/29 13:41:56 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2013/07/29 13:41:57 | 2013-07-29 13:41:57.622:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@localhost:9000
+INFO   | jvm 1    | 2013/07/29 13:41:57 | 2013-07-29 13:41:57.624:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+2013.07.29 13:41:58 INFO  org.sonar.INFO  Stop sonar...
+2013.07.29 13:41:58 INFO  o.s.s.n.NotificationService  Notification service stopped
+2013.07.29 13:41:58 INFO  org.sonar.INFO  Stop sonar done: 4 ms
+INFO   | jvm 1    | 2013/07/29 13:41:58 | 2013-07-29 13:41:58.665:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+STATUS | wrapper  | 2013/07/29 13:41:58 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:41:58 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:41:59 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:41:59 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:41:59 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:41:59 | 
+INFO   | jvm 1    | 2013/07/29 13:41:59 | 2013-07-29 13:41:59.568:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:42:01 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:01 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:42:02 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:42:02 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:42:02 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:42:02 INFO  org.sonar.INFO  Install plugins done: 304 ms
+2013.07.29 13:42:02 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:42:03 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:42:03 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2013.07.29 13:42:04 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:42:04 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:42:04 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:42:04 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:42:04 INFO  org.sonar.INFO  Deploy GWT plugins done: 47 ms
+2013.07.29 13:42:04 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:42:05 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:42:05 INFO  org.sonar.INFO  Load metrics done: 268 ms
+2013.07.29 13:42:05 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:42:05 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 472 ms
+2013.07.29 13:42:05 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 383 ms
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [pmd/java] done: 560 ms
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 29 ms
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [squid/java] done: 162 ms
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:42:06 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2013.07.29 13:42:07 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1905 ms
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:42:09 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 14 ms
+2013.07.29 13:42:09 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:42:09 INFO  org.sonar.INFO  Start components done: 6296 ms
+2013.07.29 13:42:09 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:42:09 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:42:14 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:42:14 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:42:20 | 2013-07-29 13:42:20.038:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:42:20 | 2013-07-29 13:42:20.093:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:9000
+STATUS | wrapper  | 2013/07/29 13:43:26 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2013/07/29 13:43:26 | 2013-07-29 13:43:26.890:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@127.0.0.1:9000
+INFO   | jvm 1    | 2013/07/29 13:43:26 | 2013-07-29 13:43:26.891:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+2013.07.29 13:43:27 INFO  org.sonar.INFO  Stop sonar...
+2013.07.29 13:43:27 INFO  o.s.s.n.NotificationService  Notification service stopped
+2013.07.29 13:43:27 INFO  org.sonar.INFO  Stop sonar done: 3 ms
+INFO   | jvm 1    | 2013/07/29 13:43:27 | 2013-07-29 13:43:27.927:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+STATUS | wrapper  | 2013/07/29 13:43:28 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:43:28 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:43:28 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:43:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:43:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:43:28 | 
+INFO   | jvm 1    | 2013/07/29 13:43:28 | 2013-07-29 13:43:28.831:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:43:30 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:30 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:43:31 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:43:31 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:43:31 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:43:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:43:32 INFO  org.sonar.INFO  Install plugins done: 322 ms
+2013.07.29 13:43:32 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:43:32 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:43:32 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2013.07.29 13:43:34 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Deploy GWT plugins done: 50 ms
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:43:34 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Load metrics done: 287 ms
+2013.07.29 13:43:34 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:43:35 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 483 ms
+2013.07.29 13:43:35 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:43:35 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 358 ms
+2013.07.29 13:43:35 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [pmd/java] done: 534 ms
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 27 ms
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [squid/java] done: 150 ms
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:43:36 INFO  org.sonar.INFO  Register rules [common-java/java] done: 5 ms
+2013.07.29 13:43:36 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1984 ms
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:43:38 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 15 ms
+2013.07.29 13:43:38 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:43:38 INFO  org.sonar.INFO  Start components done: 6328 ms
+2013.07.29 13:43:39 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:43:39 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:43:43 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:43:43 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:43:49 | 2013-07-29 13:43:49.580:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 2013-07-29 13:44:03.762:WARN:oejuc.AbstractLifeCycle:FAILED SelectChannelConnector@'localhost':9000: java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateToSocketException(Net.java:58)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:84)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:90)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:61)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:292)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.StartServer.main(StartServer.java:47)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.reflect.Method.invoke(Method.java:597)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.Thread.run(Thread.java:680)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | Caused by: 
+INFO   | jvm 1    | 2013/07/29 13:44:03 | java.nio.channels.UnresolvedAddressException
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.checkAddress(Net.java:30)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:120)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:292)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.StartServer.main(StartServer.java:47)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.reflect.Method.invoke(Method.java:597)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.Thread.run(Thread.java:680)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 2013-07-29 13:44:03.764:WARN:oejuc.AbstractLifeCycle:FAILED org.eclipse.jetty.server.Server@1934315f: java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateToSocketException(Net.java:58)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:84)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:90)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:61)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:292)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.StartServer.main(StartServer.java:47)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.reflect.Method.invoke(Method.java:597)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.Thread.run(Thread.java:680)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | Caused by: 
+INFO   | jvm 1    | 2013/07/29 13:44:03 | java.nio.channels.UnresolvedAddressException
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.checkAddress(Net.java:30)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:120)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:292)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.StartServer.main(StartServer.java:47)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.reflect.Method.invoke(Method.java:597)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.Thread.run(Thread.java:680)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 
+INFO   | jvm 1    | 2013/07/29 13:44:03 | WrapperSimpleApp: Encountered an error running main: java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | java.net.SocketException: Unresolved address
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateToSocketException(Net.java:58)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:84)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.translateException(Net.java:90)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:61)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:292)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.sonar.application.StartServer.main(StartServer.java:47)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.reflect.Method.invoke(Method.java:597)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at java.lang.Thread.run(Thread.java:680)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | Caused by: java.nio.channels.UnresolvedAddressException
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.Net.checkAddress(Net.java:30)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:120)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+INFO   | jvm 1    | 2013/07/29 13:44:03 | 	... 14 more
+STATUS | wrapper  | 2013/07/29 13:44:05 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/29 13:44:32 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2013/07/29 13:44:32 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/29 13:44:32 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2013/07/29 13:44:32 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2013/07/29 13:44:32 | 
+INFO   | jvm 1    | 2013/07/29 13:44:32 | 2013-07-29 13:44:32.927:INFO:oejs.Server:jetty-7.6.11.v20130520
+2013.07.29 13:44:34 INFO  o.s.s.p.ServerImpl  Sonar Server / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:34 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2013.07.29 13:44:35 INFO  o.s.s.p.DefaultServerFileSystem  Sonar home: /Users/ushivsh/Documents/Pearson/sonar-3.6.2
+2013.07.29 13:44:35 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy
+2013.07.29 13:44:35 INFO  org.sonar.INFO  Install plugins...
+2013.07.29 13:44:35 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Cobertura / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.6.2 / f96da5480d24468e23124b85baedacd757b072f1
+2013.07.29 13:44:36 INFO  org.sonar.INFO  Install plugins done: 291 ms
+2013.07.29 13:44:36 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2013.07.29 13:44:36 INFO  org.sonar.INFO  Start components...
+2013.07.29 13:44:36 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2013.07.29 13:44:37 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Deploy GWT plugins...
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/deploy/gwt
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Deploy GWT plugins done: 48 ms
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Load metrics...
+2013.07.29 13:44:38 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Load metrics done: 295 ms
+2013.07.29 13:44:38 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2013.07.29 13:44:39 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 474 ms
+2013.07.29 13:44:39 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2013.07.29 13:44:39 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 385 ms
+2013.07.29 13:44:39 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [pmd/java] done: 550 ms
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 28 ms
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [squid/java]...
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [squid/java] done: 152 ms
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2013.07.29 13:44:40 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2013.07.29 13:44:40 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1898 ms
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2013.07.29 13:44:42 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 14 ms
+2013.07.29 13:44:42 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2013.07.29 13:44:42 INFO  org.sonar.INFO  Start components done: 6305 ms
+2013.07.29 13:44:42 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_45) [darwin-x86_64-java]
+2013.07.29 13:44:42 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2013/07/29 13:44:47 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2013/07/29 13:44:47 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2013/07/29 13:44:53 | 2013-07-29 13:44:53.062:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server/},file:/Users/ushivsh/Documents/Pearson/sonar-3.6.2/war/sonar-server
+INFO   | jvm 1    | 2013/07/29 13:44:53 | 2013-07-29 13:44:53.114:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:9000
